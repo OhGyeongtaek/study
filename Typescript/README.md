@@ -1,5 +1,5 @@
 
-> # Typescript
+# Typescript
   드림코딩 Typescript강의에서 배운 내용들을 업로드하는 폴더
   
 > ## 목표
