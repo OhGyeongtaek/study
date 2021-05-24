@@ -1,22 +1,27 @@
-type Coffee = "Coffee";
+{
+  type CoffeeCup = {
+    shots: number;
+    hasMilk: boolean;
+  };
 
-class CoffeeMachine {
-  private makeShot(): Coffee {
-    return "Coffee";
-  }
+  const BEANS_GRAMM_PER_SHOT: number = 7;
 
-  static exportCoffee(shot: number): Coffee[] {
-    const machine = new CoffeeMachine();
-    const cup: Coffee[] = [];
+  let coffeeBeans = 0;
 
-    for (let i = 0; i < shot; i++) {
-      cup.push(machine.makeShot());
+  function makeCoffee(shots: number): CoffeeCup {
+    if (coffeeBeans < shots * BEANS_GRAMM_PER_SHOT) {
+      throw new Error("커피가 없어요!");
     }
 
-    return cup;
+    coffeeBeans -= shots * BEANS_GRAMM_PER_SHOT;
+
+    return {
+      shots,
+      hasMilk: false,
+    };
   }
+
+  coffeeBeans += 10 * BEANS_GRAMM_PER_SHOT;
+
+  console.log(makeCoffee(5));
 }
-
-const shot = CoffeeMachine.exportCoffee(3);
-
-console.log(shot);
