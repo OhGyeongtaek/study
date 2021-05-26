@@ -24,4 +24,5 @@
   coffeeBeans += 10 * BEANS_GRAMM_PER_SHOT;
 
   console.log(makeCoffee(5));
+  console.log(makeCoffee(5));
 }
